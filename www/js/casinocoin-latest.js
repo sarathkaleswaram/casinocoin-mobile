@@ -49,10 +49,10 @@ var casinocoin =
 
 	module.exports = {
 	    CasinocoinAPI: __webpack_require__(1).CasinocoinAPI,
-	    // Broadcast api is experimental
-	    CasinocoinAPIBroadcast: __webpack_require__(666).CasinocoinAPIBroadcast,
 	    CasinocoinKeypairs: __webpack_require__(332),
-	    CasinocoinAddressCodec: __webpack_require__(373)
+	    CasinocoinAddressCodec: __webpack_require__(373),
+	    // Broadcast api is experimental
+	    CasinocoinAPIBroadcast: __webpack_require__(666).CasinocoinAPIBroadcast
 	};
 
 /***/ }),
@@ -15093,7 +15093,7 @@ var casinocoin =
 /* 355 */
 /***/ (function(module, exports) {
 
-	module.exports = {"_args":[["elliptic@5.2.1","/home/trojek/programer/casinocoin-libjs"]],"_from":"elliptic@5.2.1","_id":"elliptic@5.2.1","_inBundle":false,"_integrity":"sha1-+ilLZWPG3bybo9yFlGh66ECFjxA=","_location":"/elliptic","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"elliptic@5.2.1","name":"elliptic","escapedName":"elliptic","rawSpec":"5.2.1","saveSpec":null,"fetchSpec":"5.2.1"},"_requiredBy":[],"_resolved":"https://registry.npmjs.org/elliptic/-/elliptic-5.2.1.tgz","_spec":"5.2.1","_where":"/home/trojek/programer/casinocoin-libjs","author":{"name":"Fedor Indutny","email":"fedor@indutny.com"},"bugs":{"url":"https://github.com/indutny/elliptic/issues"},"dependencies":{"bn.js":"^3.1.1","brorand":"^1.0.1","hash.js":"^1.0.0","inherits":"^2.0.1"},"description":"EC cryptography","devDependencies":{"browserify":"^3.44.2","coveralls":"^2.11.3","istanbul":"^0.3.17","jscs":"^1.11.3","jshint":"^2.6.0","mocha":"^2.1.0","uglify-js":"^2.4.13"},"homepage":"https://github.com/indutny/elliptic","keywords":["EC","Elliptic","curve","Cryptography"],"license":"MIT","main":"lib/elliptic.js","name":"elliptic","repository":{"type":"git","url":"git+ssh://git@github.com/indutny/elliptic.git"},"scripts":{"coveralls":"cat ./coverage/lcov.info | coveralls","test":"make lint && istanbul test _mocha --reporter=spec test/*-test.js"},"version":"5.2.1"}
+	module.exports = {"_from":"elliptic@^5.1.0","_id":"elliptic@5.2.1","_inBundle":false,"_integrity":"sha1-+ilLZWPG3bybo9yFlGh66ECFjxA=","_location":"/elliptic","_phantomChildren":{},"_requested":{"type":"range","registry":true,"raw":"elliptic@^5.1.0","name":"elliptic","escapedName":"elliptic","rawSpec":"^5.1.0","saveSpec":null,"fetchSpec":"^5.1.0"},"_requiredBy":["/casinocoin-libjs-keypairs"],"_resolved":"https://registry.npmjs.org/elliptic/-/elliptic-5.2.1.tgz","_shasum":"fa294b6563c6ddbc9ba3dc8594687ae840858f10","_spec":"elliptic@^5.1.0","_where":"C:\\work\\Angular\\CSC\\casinocoin-libjs\\node_modules\\casinocoin-libjs-keypairs","author":{"name":"Fedor Indutny","email":"fedor@indutny.com"},"bugs":{"url":"https://github.com/indutny/elliptic/issues"},"bundleDependencies":false,"dependencies":{"bn.js":"^3.1.1","brorand":"^1.0.1","hash.js":"^1.0.0","inherits":"^2.0.1"},"deprecated":false,"description":"EC cryptography","devDependencies":{"browserify":"^3.44.2","coveralls":"^2.11.3","istanbul":"^0.3.17","jscs":"^1.11.3","jshint":"^2.6.0","mocha":"^2.1.0","uglify-js":"^2.4.13"},"homepage":"https://github.com/indutny/elliptic","keywords":["EC","Elliptic","curve","Cryptography"],"license":"MIT","main":"lib/elliptic.js","name":"elliptic","repository":{"type":"git","url":"git+ssh://git@github.com/indutny/elliptic.git"},"scripts":{"coveralls":"cat ./coverage/lcov.info | coveralls","test":"make lint && istanbul test _mocha --reporter=spec test/*-test.js"},"version":"5.2.1"}
 
 /***/ }),
 /* 356 */
@@ -39371,7 +39371,8 @@ var casinocoin =
 	var _ = __webpack_require__(327);
 
 	var _require = __webpack_require__(330),
-	    convertKeysFromSnakeCaseToCamelCase = _require.convertKeysFromSnakeCaseToCamelCase;
+	    convertKeysFromSnakeCaseToCamelCase = _require.convertKeysFromSnakeCaseToCamelCase,
+	    dropsToCsc = _require.dropsToCsc;
 
 	function renameKeys(object, mapping) {
 	    _.forEach(mapping, function (to, from) {
@@ -39381,26 +39382,26 @@ var casinocoin =
 	}
 
 	function getServerInfo(connection) {
-	    return connection.request({ command: 'server_info' }).then(function (response) {
-	        var info = convertKeysFromSnakeCaseToCamelCase(response.info);
-	        renameKeys(info, { hostid: 'hostID' });
+	    return connection.request({ command: 'server_state' }).then(function (response) {
+	        var info = convertKeysFromSnakeCaseToCamelCase(response.state);
+	        // renameKeys(info, { hostid: 'hostID' })
 	        if (info.validatedLedger) {
 	            renameKeys(info.validatedLedger, {
-	                baseFeeCsc: 'baseFeeCSC',
-	                reserveBaseCsc: 'reserveBaseCSC',
-	                reserveIncCsc: 'reserveIncrementCSC',
+	                baseFee: 'baseFeeCSC',
+	                reserveBase: 'reserveBaseCSC',
+	                reserveInc: 'reserveIncrementCSC',
 	                seq: 'ledgerVersion'
 	            });
-	            info.validatedLedger.baseFeeCSC = info.validatedLedger.baseFeeCSC.toString();
-	            info.validatedLedger.reserveBaseCSC = info.validatedLedger.reserveBaseCSC.toString();
-	            info.validatedLedger.reserveIncrementCSC = info.validatedLedger.reserveIncrementCSC.toString();
+	            info.validatedLedger.baseFeeCSC = dropsToCsc(info.validatedLedger.baseFeeCSC.toString());
+	            info.validatedLedger.reserveBaseCSC = dropsToCsc(info.validatedLedger.reserveBaseCSC.toString());
+	            info.validatedLedger.reserveIncrementCSC = dropsToCsc(info.validatedLedger.reserveIncrementCSC.toString());
 	        }
 	        return info;
 	    });
 	}
 
 	function computeFeeFromServerInfo(cushion, serverInfo) {
-	    return (Number(serverInfo.validatedLedger.baseFeeCSC) * Number(serverInfo.loadFactor) * cushion).toString();
+	    return serverInfo.validatedLedger.baseFeeCSC;
 	}
 
 	function getFee(connection, cushion) {

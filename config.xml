@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.casinocoin.core" version="1.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="org.casinocoin.mobile" version="4.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>CasinoCoin Mobile</name>
     <description>
 	CasinoCoin Mobile is a CasinoCoin wallet for Android and iOS.
@@ -17,7 +17,7 @@
     <preference name="Fullscreen" value="true" />
     <preference name="android-minSdkVersion" value="16" />
     <preference name="buildArchitecture" value="armv7" />
-    <preference name="xwalkMultipleApk" value="true" />
+    <preference name="xwalkMultipleApk" value="false" />
     <preference name="phonegap-version" value="6.5.2" />
     <platform name="android">
         <icon density="ldpi" src="www/res/icon/android/drawable-ldpi-icon.png" />
@@ -116,7 +116,6 @@
             <string>The photo library is used to scan QR-codes of CasinoCoin addresses.</string>
         </gap:config-file>
     </platform>
-    <engine name="android" spec="^6.2.1" />
     <plugin name="cordova-plugin-camera" spec="~2.1.1" />
     <plugin name="cordova-plugin-device" spec="~1.1.1" />
     <plugin name="cordova-plugin-device-orientation" spec="~1.0.2" />
@@ -134,10 +133,11 @@
         <variable name="XWALK_MODE" value="embedded" />
         <variable name="XWALK_MULTIPLEAPK" value="true" />
     </plugin>
-    <plugin name="com.verso.cordova.clipboard" spec="https://github.com/VersoSolutions/CordovaClipboard" />
     <plugin name="ionic-plugin-keyboard" spec="~2.2.1" />
     <plugin name="cordova-build-architecture" spec="https://github.com/MBuchalik/cordova-build-architecture.git" />
     <plugin name="cordova-plugin-battery-status" spec="~1.2.4" />
     <plugin name="cordova-plugin-file-transfer" spec="^1.6.3" />
     <plugin name="cordova-plugin-file" spec="^4.0.0" />
+    <engine name="android" spec="~6.4.0" />
+    <plugin name="com.verso.cordova.clipboard" spec="https://github.com/VersoSolutions/CordovaClipboard" />
 </widget>
