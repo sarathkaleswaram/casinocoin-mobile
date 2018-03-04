@@ -773,7 +773,7 @@ I understand that the recovery phrase IS NOT A WALLET BACKUP.</p><br>
 </div>
 
 
-<ul id="navheader" style="display:none"><li class="headerleft"></li><li class="headermiddle"></li><li class="headerright"><i class="fa fa-lock" aria-hidden="true">&nbsp;</i>&nbsp;</li></ul>
+<ul id="navheader" style="display:none"><li class="headerleft"></li><li class="headermiddle"></li><li class="headerright"><i class="fa fa-sign-out" aria-hidden="true">&nbsp;</i>&nbsp;</li></ul>
 
 <ul id="navfooter" style="display:none">
 	<li id="navaccounts" ontouchstart="showTab('#tabaccounts');"><i class="icon icon-chip" aria-hidden="true"></i></li>
@@ -1668,7 +1668,7 @@ function showTab(tab, dontClearText) {
 		$('.screentab').css('padding-bottom', '0em');
 		screentabpaddingbottom = 0;
                 $("#dummyfooter").hide();
-                $(".headerright>i").removeClass("fa-lock");
+                $(".headerright>i").removeClass("fa-sign-out");
                 $(".headerright>i").addClass("fa-medkit");
                 $(".headerright").off();
                 $(".headerright").on('touchend', function(){ showTab("#tabrecovery"); });
@@ -1686,7 +1686,7 @@ function showTab(tab, dontClearText) {
 		screentabpaddingbottom = 4;
                 $("#dummyfooter").show();
                 $(".headerright>i").removeClass("fa-medkit");
-                $(".headerright>i").addClass("fa-lock");
+                $(".headerright>i").addClass("fa-sign-out");
                 $(".headerright").off();
                 $(".headerright").on('touchend', function(){ doShowLogin(); });
                 if ((device.platform + "").toLowerCase() == 'browser') $(".headerright").on('click', function(){ doShowLogin(); });
