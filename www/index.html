@@ -622,11 +622,13 @@ I understand that the recovery phrase IS NOT A WALLET BACKUP.</p><br>
     <div class="paygrouping">
 	<label>Destination Tag</label>
 	<div id="confirmdesttag"></div>
-    </div>
+	</div>
+<!--
     <div class="paygrouping">
 	<label>Invoice ID</label>
 	<div id="confirminvoiceid"></div>
-    </div>
+	</div>
+-->
 	<div class="paygrouping">
 	<label>Amount</label>
 
@@ -663,12 +665,13 @@ I understand that the recovery phrase IS NOT A WALLET BACKUP.</p><br>
 	</div>
 	<br />
 
+<!--
 	<label >Invoice ID (optional)</label>
 	<div>
 	<input  type="text" id="invoiceid" class="form-control" placeholder="">
 	</div>
 	<br />
-
+-->
 	<label >Amount</label>
 	<div class="input-group">
 	<input  type="text" id="payamount" class="form-control" placeholder="">
@@ -688,7 +691,7 @@ I understand that the recovery phrase IS NOT A WALLET BACKUP.</p><br>
 	<div><center><button  type="button" class="btn btn-primary" ontouchend="doGenerateBackup();">Backup Wallet</button></center></div>
 	<div><center><button  type="button" class="btn btn-primary" id="btnsettingsresortbackup" ontouchend="showTab('#tabrestore');">Restore Wallet</button></center></div>
 	<div><center><button  type="button" class="btn btn-primary" id="btnfaq" ontouchend="window.open('https://casinocoin.org/faq', '_system');">FAQ / Help</button></center></div>
-	<div><center style="color:black;" data-version="version">Version: 4.1.0</div>
+	<div><center style="color:black;" data-version="version">Version: 4.1.1</div>
 	<div><center style="color:black;" class="deviceversion"></center></div>
 </div>
 
@@ -768,12 +771,12 @@ I understand that the recovery phrase IS NOT A WALLET BACKUP.</p><br>
 	<br>
 	<p style="text-align:center;">If you do not agree then close and uninstall this application.</p>
 </center>
-<p><center style="color:white;" data-version="version">Version: 4.1.0</p>
+<p><center style="color:white;" data-version="version">Version: 4.1.1</p>
 <p><center style="color:white;" class="deviceversion"></center></p>
 </div>
 
 
-<ul id="navheader" style="display:none"><li class="headerleft"></li><li class="headermiddle"></li><li class="headerright"><i class="fa fa-lock" aria-hidden="true">&nbsp;</i>&nbsp;</li></ul>
+<ul id="navheader" style="display:none"><li class="headerleft"></li><li class="headermiddle"></li><li class="headerright"><i class="fa fa-sign-out" aria-hidden="true">&nbsp;</i>&nbsp;</li></ul>
 
 <ul id="navfooter" style="display:none">
 	<li id="navaccounts" ontouchstart="showTab('#tabaccounts');"><i class="icon icon-chip" aria-hidden="true"></i></li>
@@ -1668,7 +1671,7 @@ function showTab(tab, dontClearText) {
 		$('.screentab').css('padding-bottom', '0em');
 		screentabpaddingbottom = 0;
                 $("#dummyfooter").hide();
-                $(".headerright>i").removeClass("fa-lock");
+                $(".headerright>i").removeClass("fa-sign-out");
                 $(".headerright>i").addClass("fa-medkit");
                 $(".headerright").off();
                 $(".headerright").on('touchend', function(){ showTab("#tabrecovery"); });
@@ -1686,7 +1689,7 @@ function showTab(tab, dontClearText) {
 		screentabpaddingbottom = 4;
                 $("#dummyfooter").show();
                 $(".headerright>i").removeClass("fa-medkit");
-                $(".headerright>i").addClass("fa-lock");
+                $(".headerright>i").addClass("fa-sign-out");
                 $(".headerright").off();
                 $(".headerright").on('touchend', function(){ doShowLogin(); });
                 if ((device.platform + "").toLowerCase() == 'browser') $(".headerright").on('click', function(){ doShowLogin(); });
@@ -1895,7 +1898,7 @@ function clearPaymentScreen() {
 	try {
 		$("#toaddress").val("");
 		$("#desttag").val("");
-		$("#invoiceid").val("");
+//		$("#invoiceid").val("");
 		$("#payamount").val("");
 	} catch(e) {handle_error(e);}
 }
@@ -1982,7 +1985,8 @@ function doPay(nonce) {
 	var payfrom = $("#payfromaccount").find(":selected").data('account');
 	var payto = $("#toaddress").val().trim();
 	var dest = $("#desttag").val().trim();
-	var invid = $("#invoiceid").val().trim();
+	// var invid = $("#invoiceid").val().trim();
+	var invid = "";
 	var amount = $("#payamount").val().trim();
 
 	if (amount != undefined && (amount+"").charAt(0) == '.') amount = "0" + amount;
@@ -2114,11 +2118,9 @@ function doPay(nonce) {
 		$('#confirmpayfromaccount')[0].innerText = payfrom;
 		$('#confirmpaytoaddress')[0].innerText = payto;
 		$('#confirmdesttag')[0].innerText = dest;
-		$('#confirminvoiceid')[0].innerText = ( invid == "" ? "(not provided)" : invid );
+		// $('#confirminvoiceid')[0].innerText = ( invid == "" ? "(not provided)" : invid );
 		$('#confirmpayamount')[0].innerText = amount + " CSC";
-
 		showTab("#tabpaymentconfirm");
-		
 		unblockInput();
 	};
 

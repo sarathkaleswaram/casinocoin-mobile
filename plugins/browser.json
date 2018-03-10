@@ -57,6 +57,9 @@
         },
         "phonegap-plugin-barcodescanner": {
             "PACKAGE_NAME": "com.casinocoin.core"
+        },
+        "cordova-android-support-gradle-release": {
+            "PACKAGE_NAME": "org.casinocoin.mobile"
         }
     },
     "dependent_plugins": {

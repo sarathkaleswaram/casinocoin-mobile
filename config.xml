@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="org.casinocoin.mobile" version="4.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="org.casinocoin.mobile" version="4.1.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>CasinoCoin Mobile</name>
     <description>
 	CasinoCoin Mobile is a CasinoCoin wallet for Android and iOS.
@@ -116,6 +116,7 @@
             <string>The photo library is used to scan QR-codes of CasinoCoin addresses.</string>
         </gap:config-file>
     </platform>
+    <engine name="android" spec="^6.2.1" />
     <plugin name="cordova-plugin-camera" spec="~2.1.1" />
     <plugin name="cordova-plugin-device" spec="~1.1.1" />
     <plugin name="cordova-plugin-device-orientation" spec="~1.0.2" />
@@ -138,6 +139,6 @@
     <plugin name="cordova-plugin-battery-status" spec="~1.2.4" />
     <plugin name="cordova-plugin-file-transfer" spec="^1.6.3" />
     <plugin name="cordova-plugin-file" spec="^4.0.0" />
-    <engine name="android" spec="~6.4.0" />
     <plugin name="com.verso.cordova.clipboard" spec="https://github.com/VersoSolutions/CordovaClipboard" />
+    <plugin name="cordova-android-support-gradle-release" spec="~1.2.0" />
 </widget>

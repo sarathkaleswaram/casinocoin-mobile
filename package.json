@@ -1,6 +1,6 @@
 {
   "name": "casinocoin-mobile",
-  "version": "4.1.0",
+  "version": "4.1.1",
   "description": "CasinoCoin Mobile is a CasinoCoin wallet for Android and iOS.",
   "main": "electron-start.js",
   "scripts": {
@@ -38,7 +38,9 @@
   "publisherName": "CasinoCoin",
   "verifyUpdateCodeSignature": "true",
   "dependencies": {
+    "com.verso.cordova.clipboard": "https://github.com/VersoSolutions/CordovaClipboard",
     "cordova-android": "^6.2.1",
+    "cordova-android-support-gradle-release": "~1.2.0",
     "cordova-build-architecture": "https://github.com/MBuchalik/cordova-build-architecture.git",
     "cordova-clipboard": "https://github.com/ibnclaudius/CordovaClipboard.git",
     "cordova-plugin-battery-status": "~1.2.4",
@@ -84,7 +86,9 @@
       "cordova-build-architecture": {},
       "cordova-plugin-battery-status": {},
       "cordova-plugin-file-transfer": {},
-      "cordova-plugin-file": {}
+      "cordova-plugin-file": {},
+      "com.verso.cordova.clipboard": {},
+      "cordova-android-support-gradle-release": {}
     }
   }
 }
