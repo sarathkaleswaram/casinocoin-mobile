@@ -279,7 +279,7 @@
 	<center>
 
 	<div>
-		<button  id="btncopywallet" data-clipboard-target="#walletbackup" "type="button" class="btn btn-info copybtnaction" ontouchend="">Copy</button>
+		<button  id="btncopywallet" data-clipboard-target="#walletbackup" type="button" class="btn btn-info copybtnaction" ontouchend="">Copy</button>
 	</div>
 	</center>
 	<label>Your backup</label>
@@ -1421,6 +1421,31 @@ function runPinPad(tab, validationfunc, successfunc, failurefunc) {
 **/
 function doShowLogin() {
 	if (debug) console.log("doShowLogin");
+	showTab("#tablogin");
+ 	Fingerprint.isAvailable(isAvailableSuccess, isAvailableError);
+
+	function isAvailableSuccess(result) {
+      /*
+      result depends on device and os. 
+      iPhone X will return 'face' other Android or iOS devices will return 'finger'  
+      */
+   		Fingerprint.show({
+      		clientId: "Fingerprint-Demo",
+      		clientSecret: "password" //Only necessary for Android
+    	}, successCallback, errorCallback); 
+    	function successCallback(){
+  			$("#btnbootstrapsequence").hide();
+   			showTab("#tabaccounts");
+    	} 
+    	function errorCallback(err){
+  			$("#btnbootstrapsequence").hide();
+            setTimeout(function() {
+                doShakeAndClearPinPad( function() { });
+            }, 0);
+    	}
+    }
+    function isAvailableError(message) { }
+
 	runPinPad("#tablogin", function(pin) {
 		validatePin(pin, function() {
 			$("#btnbootstrapsequence").hide();
