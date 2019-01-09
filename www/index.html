@@ -3644,17 +3644,19 @@ function doGetTransactions(address, marker) {
 			for (var i in x) {
                 console.log(x[i]);
 			    var deliveredAmount = x[i].outcome.deliveredAmount;
-			    var destinationAddress = x[i].specification.destination.address
-                var outgoing = (x[i].specification.source.address == address);
+				if(deliveredAmount) {
+					var destinationAddress = x[i].specification.destination.address
+					var outgoing = (x[i].specification.source.address == address);
 
-                tx += '<li class="txrow '+(outgoing ? 'txsent' : 'txreceived')+'"data-txhash="'+x[i].id+'" ontouchend="window.open(\'http://explorer.casinocoin.org/tx/'+x[i].id+'\');">';
+					tx += '<li class="txrow '+(outgoing ? 'txsent' : 'txreceived')+'"data-txhash="'+x[i].id+'" ontouchend="window.open(\'http://explorer.casinocoin.org/tx/'+x[i].id+'\');">';
 
-				tx += '<span><i class="fa ' + ( outgoing ? 'fa-paper-plane-o' : 'fa-inbox' ) + '" aria-hidden="true"></i>';
-				tx +=  destinationAddress + '</span>';
-				tx += '<span >' + deliveredAmount.value + ' ' + deliveredAmount.currency + '</span>';
+					tx += '<span><i class="fa ' + ( outgoing ? 'fa-paper-plane-o' : 'fa-inbox' ) + '" aria-hidden="true"></i>';
+					tx +=  destinationAddress + '</span>';
+					tx += '<span >' + deliveredAmount.value + ' ' + deliveredAmount.currency + '</span>';
 
-				tx += '</li>'
-				count++;
+					tx += '</li>'
+					count++;
+				}
 			}
 		}
 		if (count == 0) {
