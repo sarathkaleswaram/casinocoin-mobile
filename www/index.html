@@ -3676,7 +3676,7 @@ function doGetTransactions(address, marker) {
 			    var destinationAddress = x[i].specification.destination.address
                 var outgoing = (x[i].specification.source.address == address);
 
-                tx += '<li class="txrow '+(outgoing ? 'txsent' : 'txreceived')+'"data-txhash="'+x[i].id+'" ontouchend="window.open(\'http://explorer.casinocoin.org/tx/'+x[i].id+'\');">';
+                tx += '<li class="txrow '+(outgoing ? 'txsent' : 'txreceived')+'"data-txhash="'+x[i].id+'" onclick="window.open(\'http://explorer.casinocoin.org/tx/'+x[i].id+'\');">';
 
 				tx += '<span><i class="fa ' + ( outgoing ? 'fa-paper-plane-o' : 'fa-inbox' ) + '" aria-hidden="true"></i>';
 				tx +=  destinationAddress + '</span>';
