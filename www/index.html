@@ -279,7 +279,7 @@
 	<center>
 
 	<div>
-		<button  id="btncopywallet" data-clipboard-target="#walletbackup" "type="button" class="btn btn-info copybtnaction" ontouchend="">Copy</button>
+		<button  id="btncopywallet" data-clipboard-target="#walletbackup" type="button" class="btn btn-info copybtnaction" ontouchend="">Copy</button>
 	</div>
 	</center>
 	<label>Your backup</label>
@@ -691,7 +691,7 @@ I understand that the recovery phrase IS NOT A WALLET BACKUP.</p><br>
 	<div><center><button  type="button" class="btn btn-primary" ontouchend="doGenerateBackup();">Backup Wallet</button></center></div>
 	<div><center><button  type="button" class="btn btn-primary" id="btnsettingsresortbackup" ontouchend="showTab('#tabrestore');">Restore Wallet</button></center></div>
 	<div><center><button  type="button" class="btn btn-primary" id="btnfaq" ontouchend="window.open('https://casinocoin.org/faq', '_system');">FAQ / Help</button></center></div>
-	<div><center style="color:black;" data-version="version">Version: 4.1.1</div>
+	<div><center style="color:black;" data-version="version">Version: 4.1.2</div>
 	<div><center style="color:black;" class="deviceversion"></center></div>
 </div>
 
@@ -771,7 +771,7 @@ I understand that the recovery phrase IS NOT A WALLET BACKUP.</p><br>
 	<br>
 	<p style="text-align:center;">If you do not agree then close and uninstall this application.</p>
 </center>
-<p><center style="color:white;" data-version="version">Version: 4.1.1</p>
+<p><center style="color:white;" data-version="version">Version: 4.1.2</p>
 <p><center style="color:white;" class="deviceversion"></center></p>
 </div>
 
@@ -1421,6 +1421,31 @@ function runPinPad(tab, validationfunc, successfunc, failurefunc) {
 **/
 function doShowLogin() {
 	if (debug) console.log("doShowLogin");
+	showTab("#tablogin");
+ 	Fingerprint.isAvailable(isAvailableSuccess, isAvailableError);
+
+	function isAvailableSuccess(result) {
+      /*
+      result depends on device and os. 
+      iPhone X will return 'face' other Android or iOS devices will return 'finger'  
+      */
+   		Fingerprint.show({
+      		clientId: "Fingerprint-Demo",
+      		clientSecret: "password" //Only necessary for Android
+    	}, successCallback, errorCallback); 
+    	function successCallback(){
+  			$("#btnbootstrapsequence").hide();
+   			showTab("#tabaccounts");
+    	} 
+    	function errorCallback(err){
+  			$("#btnbootstrapsequence").hide();
+            setTimeout(function() {
+                doShakeAndClearPinPad( function() { });
+            }, 0);
+    	}
+    }
+    function isAvailableError(message) { }
+
 	runPinPad("#tablogin", function(pin) {
 		validatePin(pin, function() {
 			$("#btnbootstrapsequence").hide();
@@ -3673,17 +3698,18 @@ function doGetTransactions(address, marker) {
 			for (var i in x) {
                 console.log(x[i]);
 			    var deliveredAmount = x[i].outcome.deliveredAmount;
-			    var destinationAddress = x[i].specification.destination.address
-                var outgoing = (x[i].specification.source.address == address);
+				if(deliveredAmount) {
+					var destinationAddress = x[i].specification.destination.address
+					var outgoing = (x[i].specification.source.address == address);
+          
+          tx += '<li class="txrow '+(outgoing ? 'txsent' : 'txreceived')+'"data-txhash="'+x[i].id+'" onclick="window.open(\'http://explorer.casinocoin.org/tx/'+x[i].id+'\');">';
+					tx += '<span><i class="fa ' + ( outgoing ? 'fa-paper-plane-o' : 'fa-inbox' ) + '" aria-hidden="true"></i>';
+					tx +=  destinationAddress + '</span>';
+					tx += '<span >' + deliveredAmount.value + ' ' + deliveredAmount.currency + '</span>';
 
-                tx += '<li class="txrow '+(outgoing ? 'txsent' : 'txreceived')+'"data-txhash="'+x[i].id+'" onclick="window.open(\'http://explorer.casinocoin.org/tx/'+x[i].id+'\');">';
-
-				tx += '<span><i class="fa ' + ( outgoing ? 'fa-paper-plane-o' : 'fa-inbox' ) + '" aria-hidden="true"></i>';
-				tx +=  destinationAddress + '</span>';
-				tx += '<span >' + deliveredAmount.value + ' ' + deliveredAmount.currency + '</span>';
-
-				tx += '</li>'
-				count++;
+					tx += '</li>'
+					count++;
+				}
 			}
 		}
 		if (count == 0) {

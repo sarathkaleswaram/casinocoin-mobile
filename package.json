@@ -1,6 +1,6 @@
 {
   "name": "casinocoin-mobile",
-  "version": "4.1.1",
+  "version": "4.1.2",
   "description": "CasinoCoin Mobile is a CasinoCoin wallet for Android and iOS.",
   "main": "electron-start.js",
   "scripts": {
@@ -58,7 +58,8 @@
     "cordova-plugin-whitelist": "~1.2.1",
     "ionic-plugin-keyboard": "~2.2.1",
     "menu": "^0.2.5",
-    "phonegap-plugin-barcodescanner": "~6.0.6"
+    "phonegap-plugin-barcodescanner": "~6.0.6",
+    "xml2js": "^0.4.19"
   },
   "cordova": {
     "platforms": [

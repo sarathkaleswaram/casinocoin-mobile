@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="org.casinocoin.mobile" version="4.1.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="org.casinocoin.mobile" version="4.1.2" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>CasinoCoin Mobile</name>
     <description>
 	CasinoCoin Mobile is a CasinoCoin wallet for Android and iOS.
@@ -141,4 +141,5 @@
     <plugin name="cordova-plugin-file" spec="^4.0.0" />
     <plugin name="com.verso.cordova.clipboard" spec="https://github.com/VersoSolutions/CordovaClipboard" />
     <plugin name="cordova-android-support-gradle-release" spec="~1.2.0" />
+    <plugin name="cordova-plugin-fingerprint-aio" spec="~1.3.6" />
 </widget>
