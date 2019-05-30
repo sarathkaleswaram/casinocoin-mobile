@@ -1,0 +1,84 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "com.verso.cordova.clipboard": {
+      "PACKAGE_NAME": "org.casinocoin.mobile"
+    },
+    "cordova-android-support-gradle-release": {
+      "PACKAGE_NAME": "org.casinocoin.mobile"
+    },
+    "cordova-build-architecture": {
+      "PACKAGE_NAME": "org.casinocoin.mobile"
+    },
+    "cordova-plugin-battery-status": {
+      "PACKAGE_NAME": "org.casinocoin.mobile"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "org.casinocoin.mobile"
+    },
+    "cordova-plugin-crosswalk-webview": {
+      "PACKAGE_NAME": "org.casinocoin.mobile"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "org.casinocoin.mobile"
+    },
+    "cordova-plugin-device-motion": {
+      "PACKAGE_NAME": "org.casinocoin.mobile"
+    },
+    "cordova-plugin-device-orientation": {
+      "PACKAGE_NAME": "org.casinocoin.mobile"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "org.casinocoin.mobile"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "org.casinocoin.mobile"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "org.casinocoin.mobile"
+    },
+    "cordova-plugin-screen-orientation": {
+      "PACKAGE_NAME": "org.casinocoin.mobile"
+    },
+    "cordova-plugin-sqlite-2": {
+      "PACKAGE_NAME": "org.casinocoin.mobile"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "org.casinocoin.mobile"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "org.casinocoin.mobile"
+    },
+    "ionic-plugin-keyboard": {
+      "PACKAGE_NAME": "org.casinocoin.mobile"
+    },
+    "phonegap-plugin-barcodescanner": {
+      "CAMERA_USAGE_DESCRIPTION": " ",
+      "PACKAGE_NAME": "org.casinocoin.mobile"
+    },
+    "cordova-plugin-add-swift-support": {
+      "PACKAGE_NAME": "org.casinocoin.mobile"
+    },
+    "cordova-plugin-fingerprint-aio": {
+      "FACEID_USAGE_DESCRIPTION": " ",
+      "PACKAGE_NAME": "org.casinocoin.mobile"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-compat": {
+      "PACKAGE_NAME": "org.casinocoin.mobile"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "org.casinocoin.mobile"
+    },
+    "es6-promise-plugin": {
+      "PACKAGE_NAME": "org.casinocoin.mobile"
+    }
+  }
+}

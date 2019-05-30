@@ -690,7 +690,7 @@ I understand that the recovery phrase IS NOT A WALLET BACKUP.</p><br>
 	<div><center><button  type="button" class="btn btn-primary" id="btnsettingschangepassphrase" ontouchend="showTab('#tabchangepassphrase');">Change Passphrase</button></center></div>
 	<div><center><button  type="button" class="btn btn-primary" ontouchend="doGenerateBackup();">Backup Wallet</button></center></div>
 	<div><center><button  type="button" class="btn btn-primary" id="btnsettingsresortbackup" ontouchend="showTab('#tabrestore');">Restore Wallet</button></center></div>
-	<div><center><button  type="button" class="btn btn-primary" id="btnfaq" ontouchend="window.open('https://casinocoin.org/faq', '_system');">FAQ / Help</button></center></div>
+	<div><center><button  type="button" class="btn btn-primary" id="btnfaq" onclick="window.open('https://casinocoin.org/faq', '_system');">FAQ / Help</button></center></div>
 	<div><center style="color:black;" data-version="version">Version: 4.1.5</div>
 	<div><center style="color:black;" class="deviceversion"></center></div>
 </div>
@@ -1430,7 +1430,7 @@ function doShowLogin() {
       iPhone X will return 'face' other Android or iOS devices will return 'finger'  
       */
    		Fingerprint.show({
-      		clientId: "Fingerprint-Demo",
+      		clientId: "Fingerprint-Login",
       		clientSecret: "password" //Only necessary for Android
     	}, successCallback, errorCallback); 
     	function successCallback(){

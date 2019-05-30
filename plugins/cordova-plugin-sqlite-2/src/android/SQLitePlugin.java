@@ -109,7 +109,7 @@ public class SQLitePlugin extends CordovaPlugin {
       statement = db.compileStatement(sql);
       debug("compiled statement");
       if (bindArgs != null) {
-        statement.bindAllArgsAsStrings(bindArgs);
+        bindAllArguments(statement, bindArgs);
       }
       debug("bound args");
       if (isInsert(sql)) {
@@ -334,6 +334,16 @@ public class SQLitePlugin extends CordovaPlugin {
   private static class ReadOnlyException extends Exception {
     public ReadOnlyException() {
       super("could not prepare statement (23 not authorized)");
+    }
+  }
+
+  private static void bindAllArguments(SQLiteStatement statement, String[] bindArgs) {
+    for (int i = 0; i < bindArgs.length; i++) {
+      if (bindArgs[i] == null) {
+        statement.bindNull(i + 1);
+      } else {
+        statement.bindString(i + 1, bindArgs[i]);
+      }
     }
   }
 }

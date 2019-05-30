@@ -42,7 +42,8 @@
     "cordova-android": "^6.2.1",
     "cordova-android-support-gradle-release": "~1.2.0",
     "cordova-build-architecture": "https://github.com/MBuchalik/cordova-build-architecture.git",
-    "cordova-clipboard": "https://github.com/ibnclaudius/CordovaClipboard.git",
+    "cordova-ios": "^4.5.4",
+    "cordova-plugin-add-swift-support": "^2.0.2",
     "cordova-plugin-battery-status": "~1.2.4",
     "cordova-plugin-camera": "~2.1.1",
     "cordova-plugin-crosswalk-webview": "~2.3.0",
@@ -51,9 +52,10 @@
     "cordova-plugin-dialogs": "~1.2.0",
     "cordova-plugin-file": "^4.0.0",
     "cordova-plugin-file-transfer": "^1.6.3",
+    "cordova-plugin-fingerprint-aio": "^1.7.0",
     "cordova-plugin-network-information": "~1.2.0",
     "cordova-plugin-screen-orientation": "~2.0.1",
-    "cordova-plugin-sqlite-2": "~1.0.4",
+    "cordova-plugin-sqlite-2": "^1.0.6",
     "cordova-plugin-statusbar": "~2.1.2",
     "cordova-plugin-whitelist": "~1.2.1",
     "ionic-plugin-keyboard": "~2.2.1",
@@ -63,7 +65,8 @@
   },
   "cordova": {
     "platforms": [
-      "android"
+      "android",
+      "ios"
     ],
     "plugins": {
       "cordova-plugin-camera": {},
@@ -73,7 +76,9 @@
       "cordova-plugin-network-information": {},
       "cordova-plugin-statusbar": {},
       "cordova-plugin-whitelist": {},
-      "phonegap-plugin-barcodescanner": {},
+      "phonegap-plugin-barcodescanner": {
+        "CAMERA_USAGE_DESCRIPTION": " "
+      },
       "cordova-plugin-sqlite-2": {},
       "cordova-plugin-screen-orientation": {},
       "cordova-plugin-crosswalk-webview": {
@@ -89,7 +94,11 @@
       "cordova-plugin-file-transfer": {},
       "cordova-plugin-file": {},
       "com.verso.cordova.clipboard": {},
-      "cordova-android-support-gradle-release": {}
+      "cordova-android-support-gradle-release": {},
+      "cordova-plugin-fingerprint-aio": {
+        "FACEID_USAGE_DESCRIPTION": " "
+      },
+      "cordova-plugin-add-swift-support": {}
     }
   }
 }

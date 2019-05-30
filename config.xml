@@ -19,6 +19,7 @@
     <preference name="buildArchitecture" value="armv7" />
     <preference name="xwalkMultipleApk" value="false" />
     <preference name="phonegap-version" value="6.5.2" />
+    <preference name="UseSwiftLanguageVersion" value="4.5.4" />
     <platform name="android">
         <icon density="ldpi" src="www/res/icon/android/drawable-ldpi-icon.png" />
         <icon density="mdpi" src="www/res/icon/android/drawable-mdpi-icon.png" />
@@ -116,7 +117,6 @@
             <string>The photo library is used to scan QR-codes of CasinoCoin addresses.</string>
         </gap:config-file>
     </platform>
-    <engine name="android" spec="^6.2.1" />
     <plugin name="cordova-plugin-camera" spec="~2.1.1" />
     <plugin name="cordova-plugin-device" spec="~1.1.1" />
     <plugin name="cordova-plugin-device-orientation" spec="~1.0.2" />
@@ -125,7 +125,7 @@
     <plugin name="cordova-plugin-statusbar" spec="~2.1.2" />
     <plugin name="cordova-plugin-whitelist" spec="~1.2.1" />
     <plugin name="phonegap-plugin-barcodescanner" spec="~6.0.6" />
-    <plugin name="cordova-plugin-sqlite-2" spec="~1.0.4" />
+    <plugin name="cordova-plugin-sqlite-2" spec="^1.0.6" />
     <plugin name="cordova-plugin-screen-orientation" spec="~2.0.1" />
     <plugin name="cordova-plugin-crosswalk-webview" spec="~2.3.0">
         <variable name="XWALK_VERSION" value="23+" />
@@ -141,5 +141,10 @@
     <plugin name="cordova-plugin-file" spec="^4.0.0" />
     <plugin name="com.verso.cordova.clipboard" spec="https://github.com/VersoSolutions/CordovaClipboard" />
     <plugin name="cordova-android-support-gradle-release" spec="~1.2.0" />
-    <plugin name="cordova-plugin-fingerprint-aio" spec="~1.3.6" />
+    <plugin name="cordova-plugin-fingerprint-aio" spec="^1.7.0">
+        <variable name="FACEID_USAGE_DESCRIPTION" value=" " />
+    </plugin>
+    <plugin name="cordova-plugin-add-swift-support" spec="^2.0.2" />
+    <engine name="android" spec="^6.2.1" />
+    <engine name="ios" spec="^4.5.4" />
 </widget>

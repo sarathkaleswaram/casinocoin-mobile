@@ -2,16 +2,20 @@ import Foundation
 import LocalAuthentication
 
 @objc(Fingerprint) class Fingerprint : CDVPlugin {
-    
-    fileprivate var policy:LAPolicy!
-    
+
+    @objc(isAvailable:)
     func isAvailable(_ command: CDVInvokedUrlCommand){
         let authenticationContext = LAContext();
         var biometryType = "finger";
         var error:NSError?;
-        
+        let policy:LAPolicy = .deviceOwnerAuthenticationWithBiometrics;
+
         let available = authenticationContext.canEvaluatePolicy(policy, error: &error);
-        
+
+        if(error != nil){
+            biometryType = "none";
+        }
+
         var pluginResult = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: "Not available");
         if available == true {
             if #available(iOS 11.0, *) {
@@ -27,16 +31,19 @@ import LocalAuthentication
 
             pluginResult = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: biometryType);
         }
-        
+
         commandDelegate.send(pluginResult, callbackId:command.callbackId);
     }
-    
+
+
+    @objc(authenticate:)
     func authenticate(_ command: CDVInvokedUrlCommand){
         let authenticationContext = LAContext();
         var pluginResult = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: "Something went wrong");
         var reason = "Authentication";
+        var policy:LAPolicy = .deviceOwnerAuthentication;
         let data  = command.arguments[0] as AnyObject?;
-        
+
         if let disableBackup = data?["disableBackup"] as! Bool? {
             if disableBackup {
                 authenticationContext.localizedFallbackTitle = "";
@@ -47,14 +54,14 @@ import LocalAuthentication
                 }
             }
         }
-        
+
         // Localized reason
         if let localizedReason = data?["localizedReason"] as! String? {
             reason = localizedReason;
         }else if let clientId = data?["clientId"] as! String? {
             reason = clientId;
         }
-        
+
         authenticationContext.evaluatePolicy(
             policy,
             localizedReason: reason,
@@ -70,16 +77,9 @@ import LocalAuthentication
                 self.commandDelegate.send(pluginResult, callbackId:command.callbackId);
         });
     }
-    
+
     override func pluginInitialize() {
         super.pluginInitialize()
-        
-        guard #available(iOS 9.0, *) else {
-            policy = .deviceOwnerAuthenticationWithBiometrics
-            return
-        }
-        
-        policy = .deviceOwnerAuthentication
     }
 }
 
