@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title text-center>
+      Send
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>From Account</ion-list-header>
+    <ion-item>
+      <ion-select>
+        <ion-select-option *ngFor="let user of users">{{user.first + ' ' + user.last}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">To Address</ion-label>
+      <ion-input></ion-input>
+      <ion-icon name="qr-scanner"></ion-icon>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="stacked">Destination Tag (optional, but many exchanges require this)</ion-label>
+      <ion-input></ion-input>
+      <ion-icon name="destination-tag"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Amount</ion-label>
+      <ion-input></ion-input>
+      <ion-icon name="send"></ion-icon>
+    </ion-item>
+  </ion-list>
+
+  <p text-center>The CasinoCoin network requires a minimum 10 CSC balance at all times and charges fees based on congestion even for failed transactions.</p>
+
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "casinocoin-mobile",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

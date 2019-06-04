@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title text-center>
+      Accounts
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card *ngFor="let account of accountList">
+      <ion-label color="brand" style="float: left">Test Account</ion-label>
+      <ion-label color="brand" style="float: right">50.881 CSC</ion-label>      
+    </ion-card>
+
+    <ion-card class="add-account">
+      <ion-icon color="brand" name="add"></ion-icon>
+      <ion-label color="brand">Add Account</ion-label>      
+    </ion-card>
+</ion-content>
