@@ -1,0 +1,57 @@
+ion-button {
+    width: 80%;
+}
+
+.pinpad {
+    text-align: center;
+    margin-top: calc(50vh - 17em);
+}
+
+.pinpad button {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    padding: 0px;
+    margin: 0.2em 0.4em 0.2em 0.4em;
+    line-height: 3em;
+    font-size: 1.4em;
+    min-width: 3.6em !important;
+    min-height: 3.6em !important;
+    position: relative;
+    text-align: center;
+}
+
+.pinpad *:focus {
+    outline: none;
+}
+
+.pinpad button:active {
+    background-color: rgba(255,0,0,0.6);
+    -moz-transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
+/* pinpad lettering contributed by https://github.com/WietseWind */
+.pinpad button i.char {
+    font-size: .5em;
+    text-transform: uppercase;
+    font-style: normal;
+    display: block;
+    line-height: .4em;
+    position: absolute;
+    width: 100%;
+    margin-top: -20%;
+    letter-spacing: 2px;
+    font-weight: normal;
+    padding-left: 2px;
+}
+
+.pinnumber {
+    color: rgba(255,255,255,0.7);
+}
+
+.doticons ion-icon::before{
+    padding:0px 2px;
+}

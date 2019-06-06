@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LogService } from 'src/app/providers/log.service';
 
 @Component({
   selector: 'app-accounts-tab',
@@ -7,6 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AccountsTabPage {
 
-  constructor() {}
+  constructor(private logger: LogService) {
+    this.logger.debug("### Login Successful ###")
+  }
 
 }

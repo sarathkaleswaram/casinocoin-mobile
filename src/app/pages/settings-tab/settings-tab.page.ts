@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @Component({
   selector: 'app-settings-tab',
@@ -7,6 +8,10 @@ import { Component } from '@angular/core';
 })
 export class SettingsTabPage {
 
-  constructor() {}
+  constructor(public iab: InAppBrowser) {}
+
+  visitFAQ() {
+    this.iab.create("https://casinocoin.org/faq", "_system");
+  }
 
 }

@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title text-center>{{title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="pinpad" *ngIf="!pinVerified">
+    <div text-center large margin-vertical class="doticons">
+      <ion-icon [name]="enteredPinCode.length>0 ? 'radio-button-on' : 'radio-button-off'"></ion-icon>
+      <ion-icon [name]="enteredPinCode.length>1 ? 'radio-button-on' : 'radio-button-off'"></ion-icon>
+      <ion-icon [name]="enteredPinCode.length>2 ? 'radio-button-on' : 'radio-button-off'"></ion-icon>
+      <ion-icon [name]="enteredPinCode.length>3 ? 'radio-button-on' : 'radio-button-off'"></ion-icon>
+      <ion-icon [name]="enteredPinCode.length>4 ? 'radio-button-on' : 'radio-button-off'"></ion-icon>
+      <ion-icon [name]="enteredPinCode.length>5 ? 'radio-button-on' : 'radio-button-off'"></ion-icon>
+    </div>
+    <br>
+    <button (click)="handlePinInput('1')">
+      <div>1</div>
+    </button>
+    <button (click)="handlePinInput('2')">
+      <div>2<i class="char">abc</i></div>
+    </button>
+    <button (click)="handlePinInput('3')">
+      <div>3<i class="char">def</i></div>
+    </button><br>
+    <button (click)="handlePinInput('4')">
+      <div>4<i class="char">ghi</i></div>
+    </button>
+    <button (click)="handlePinInput('5')">
+      <div>5<i class="char">jkl</i></div>
+    </button>
+    <button (click)="handlePinInput('6')">
+      <div>6<i class="char">mno</i></div>
+    </button><br>
+    <button (click)="handlePinInput('7')">
+      <div>7<i class="char">prqs</i></div>
+    </button>
+    <button (click)="handlePinInput('8')">
+      <div>8<i class="char">tuv</i></div>
+    </button>
+    <button (click)="handlePinInput('9')">
+      <div>9<i class="char">wxyz</i></div>
+    </button><br>
+    <button (click)="closePin()">
+      <ion-icon name="close"></ion-icon>
+    </button>
+    <button (click)="handlePinInput('0')">
+      <div>0</div>
+    </button>
+    <button (click)="backspacePin()">
+      <ion-icon name="backspace"></ion-icon>
+    </button>
+  </div>
+
+  <div *ngIf="pinVerified">
+    <ion-list text-center>
+      <ion-item>
+        <ion-label position="stacked">Set a Passphrase</ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Repeat Passphrase</ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+
+      <br>
+      <p style="color:black; text-align: justify;" text-center>Your passphrase will be used to encrypt your wallet. You will only enter it when you wish to send CSC. It should be long and strong. Never share it with anyone.</p>
+      <br>
+
+      <ion-button shape="round" (click)="validatePassPhrase()">Set Passphrase</ion-button>
+    </ion-list>
+  </div>
+</ion-content>

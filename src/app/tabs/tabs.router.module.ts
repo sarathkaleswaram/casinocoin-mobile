@@ -4,7 +4,7 @@ import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
   {
-    path: 'tabs',
+    path: '',
     component: TabsPage,
     children: [
       {
@@ -12,7 +12,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: '../accounts-tab/accounts-tab.module#AccountsTabPageModule'
+            loadChildren: '../pages/accounts-tab/accounts-tab.module#AccountsTabPageModule'
           }
         ]
       },
@@ -21,7 +21,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: '../send-tab/send-tab.module#SendTabPageModule'
+            loadChildren: '../pages/send-tab/send-tab.module#SendTabPageModule'
           }
         ]
       },
@@ -30,7 +30,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: '../settings-tab/settings-tab.module#Tab3PageModule'
+            loadChildren: '../pages/settings-tab/settings-tab.module#Tab3PageModule'
           }
         ]
       },

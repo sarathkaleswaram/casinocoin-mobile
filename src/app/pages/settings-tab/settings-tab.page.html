@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title text-center>
+      Settings
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list text-center>
+    <ion-button shape="round" routerLink="/change-pin" routerDirection="forward">Change PIN</ion-button>
+    <ion-button shape="round" routerLink="/change-passphrase" routerDirection="forward">Change Passphrase</ion-button>
+    <ion-button shape="round" routerLink="/backup-wallet" routerDirection="forward">Backup Wallet</ion-button>
+    <ion-button shape="round" routerLink="/restore-wallet" routerDirection="forward">Restore Wallet</ion-button>
+    <ion-button shape="round" (click)="visitFAQ()">FAQ / Help</ion-button>
+  </ion-list>
+
+  <p text-center>Version: 1.0.0</p>
+  <p text-center>Mobile - OS</p>
+</ion-content>
