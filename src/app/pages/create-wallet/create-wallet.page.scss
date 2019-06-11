@@ -1,57 +1,106 @@
 ion-button {
-    width: 80%;
+  width: 80%;
 }
 
 .pinpad {
-    text-align: center;
-    margin-top: calc(50vh - 17em);
+  text-align: center;
+  margin-top: calc(50vh - 17em);
 }
 
 .pinpad button {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(255,255,255,0.1);
-    border-radius: 50%;
-    padding: 0px;
-    margin: 0.2em 0.4em 0.2em 0.4em;
-    line-height: 3em;
-    font-size: 1.4em;
-    min-width: 3.6em !important;
-    min-height: 3.6em !important;
-    position: relative;
-    text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  padding: 0px;
+  margin: 0.2em 0.4em 0.2em 0.4em;
+  line-height: 3em;
+  font-size: 1.4em;
+  min-width: 3.6em !important;
+  min-height: 3.6em !important;
+  position: relative;
+  text-align: center;
 }
 
 .pinpad *:focus {
-    outline: none;
+  outline: none;
 }
 
 .pinpad button:active {
-    background-color: rgba(255,0,0,0.6);
-    -moz-transition: all 0.1s ease-in-out;
-    -webkit-transition: all 0.1s ease-in-out;
-    -o-transition: all 0.1s ease-in-out;
-    transition: all 0.1s ease-in-out;
+  background-color: rgba(255, 0, 0, 0.6);
+  -moz-transition: all 0.1s ease-in-out;
+  -webkit-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
 /* pinpad lettering contributed by https://github.com/WietseWind */
 .pinpad button i.char {
-    font-size: .5em;
-    text-transform: uppercase;
-    font-style: normal;
-    display: block;
-    line-height: .4em;
-    position: absolute;
-    width: 100%;
-    margin-top: -20%;
-    letter-spacing: 2px;
-    font-weight: normal;
-    padding-left: 2px;
+  font-size: 0.5em;
+  text-transform: uppercase;
+  font-style: normal;
+  display: block;
+  line-height: 0.4em;
+  position: absolute;
+  width: 100%;
+  margin-top: -20%;
+  letter-spacing: 2px;
+  font-weight: normal;
+  padding-left: 2px;
 }
 
 .pinnumber {
-    color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.7);
 }
 
-.doticons ion-icon::before{
-    padding:0px 2px;
+.doticons ion-icon::before {
+  padding: 0px 2px;
+}
+.title-md {
+  font-size: 15px;
+  position: absolute;
+  left: 85px;
+  bottom: 20px;
+  font-weight: normal;
+}
+.ttile-ios {
+  font-size: 15px;
+  position: absolute;
+  left: 85px;
+  bottom: 20px;
+  font-weight: normal;
+}
+ion-button {
+  text-transform: none;
+}
+ion-toolbar {
+  height: 60px;
+}
+.pass-phrase,
+.repeat-phrase {
+  font-weight: bold;
+  font-size: 15px;
+}
+.my-btn {
+  height: 33px;
+  width: 250px;
+  font-size: 14px;
+  border-radius: 4px;
+  color: #ffffff;
+  margin-left: 25px;
+}
+.text {
+  color: #000000;
+  font-size: 15px;
+}
+.set-phrase,
+.repeat-phrase {
+  font-weight: bold;
+  font-size: 15px;
+  color: #000000;
+  margin-left: 16px;
+}
+.text {
+  font-size: 15px;
+  color: #000000;
+  margin-left: 16px;
 }

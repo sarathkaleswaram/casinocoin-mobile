@@ -1,10 +1,29 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color='primary'>
     <ion-back-button></ion-back-button>
-    <ion-title text-center>restore-wallet</ion-title>
+    <ion-title class='title' text-center>Restore Wallet</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <p class='restore-wallet'>To restore a previously backed up wallet paste it below. This will DESTROY any data in your
+    current wallet and cannot be undone. Further, this will restore your PIN, passphrase and recovery phrase AT THE TIME
+    THE BACKUP WAS MADE.</p>
+  <p class='back-up'>Backup code</p>
+  <ion-item>
+    <ion-input type='text'></ion-input>
+  </ion-item>
+  <p class='recovery-phrase'>Passphrase or Recovery Phrase (of current wallet)</p>
+  <ion-item>
+    <ion-input type='text'></ion-input>
+  </ion-item>
+  <ion-row>
+    <ion-col size='9'>
+      <p class='destory-wallet'>I understand this will <b>DESTROY</b> my current wallet.</p>
+    </ion-col>
+    <ion-col>
+      <ion-toggle disabled></ion-toggle>
+    </ion-col>
+  </ion-row>
+  <ion-button color='danger' class='mybtn'>Restore Backup</ion-button>
 </ion-content>

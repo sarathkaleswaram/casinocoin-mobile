@@ -1,3 +1,14 @@
 ion-button {
-    width: 80%;
+  text-transform: none;
+  font-weight: normal;
+  width: 80%;
+  border-radius: 5px;
+}
+.setting {
+  font-size: 15px;
+}
+.exit {
+  position: absolute;
+  right: 20px;
+  font-size: 20px;
 }

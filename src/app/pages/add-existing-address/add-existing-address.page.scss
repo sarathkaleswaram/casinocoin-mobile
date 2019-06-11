@@ -1,0 +1,41 @@
+.title-md {
+  font-size: 15px;
+  position: absolute;
+  left: 70px;
+  bottom: 20px;
+}
+.ttile-ios {
+  font-size: 15px;
+  position: absolute;
+  left: 70px;
+  bottom: 20px;
+}
+ion-button {
+  text-transform: none;
+}
+ion-toolbar {
+  height: 60px;
+}
+.my-btn {
+  text-transform: none;
+  font-size: 14px;
+  font-weight: normal;
+  width: 250px;
+  height: 33px;
+  border-radius: 5px;
+  position: absolute;
+  left: 22px;
+}
+.address,
+.secret-key,
+.pass-phrase,
+.nick-name {
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 15px;
+}
+.qr-btn {
+  height: 33px;
+  position: absolute;
+  right: 20px;
+}

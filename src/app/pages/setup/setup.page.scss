@@ -1,3 +1,45 @@
 ion-button {
-    width: 80%;
+  width: 80%;
+}
+.header {
+  font-size: 30px;
+}
+.content {
+  font-size: 15px;
+}
+.title {
+  font-size: 15px;
+}
+.terms-conditions {
+  font-size: 15px;
+}
+.my-btn {
+  height: 33px;
+  width: 250px;
+  font-weight: normal;
+  text-transform: none;
+  font-size: 14px;
+  margin-left: 18px;
+}
+
+.my-btn1 {
+  height: 33px;
+  width: 250px;
+  text-transform: none;
+  font-size: 14px;
+  margin-left: 18px;
+  font-weight: normal;
+}
+.header,
+.content {
+  margin-left: 18px;
+}
+.not-agree,
+.version,
+.terms-conditions {
+  font-size: 15px;
+  margin-left: 18px;
+}
+.version {
+  text-align: center;
 }

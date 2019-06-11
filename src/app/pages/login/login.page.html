@@ -1,10 +1,11 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title text-center>CasinoCoin Mobile</ion-title>
+  <ion-toolbar color='primary'>
+    <ion-icon name="medkit" class="recory-icon"></ion-icon>
+    <ion-title text-center class='title'>CasinoCoin Mobile</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content color='secondary'>
   <div class="pinpad" *ngIf="!pinVerified">
     <div text-center large margin-vertical class="doticons">
       <ion-icon [name]="enteredPinCode.length>0 ? 'radio-button-on' : 'radio-button-off'"></ion-icon>
@@ -16,40 +17,40 @@
     </div>
     <br>
     <button (click)="handlePinInput('1')">
-      <div>1</div>
+      <div class='btn'>1</div>
     </button>
     <button (click)="handlePinInput('2')">
-      <div>2<i class="char">abc</i></div>
+      <div class='btn'>2<i class="char">abc</i></div>
     </button>
     <button (click)="handlePinInput('3')">
-      <div>3<i class="char">def</i></div>
+      <div class='btn'>3<i class="char">def</i></div>
     </button><br>
     <button (click)="handlePinInput('4')">
-      <div>4<i class="char">ghi</i></div>
+      <div class='btn'>4<i class="char">ghi</i></div>
     </button>
     <button (click)="handlePinInput('5')">
-      <div>5<i class="char">jkl</i></div>
+      <div class='btn'>5<i class="char">jkl</i></div>
     </button>
     <button (click)="handlePinInput('6')">
-      <div>6<i class="char">mno</i></div>
+      <div class='btn'>6<i class="char">mno</i></div>
     </button><br>
     <button (click)="handlePinInput('7')">
-      <div>7<i class="char">prqs</i></div>
+      <div class='btn'>7<i class="char">prqs</i></div>
     </button>
     <button (click)="handlePinInput('8')">
-      <div>8<i class="char">tuv</i></div>
+      <div class='btn'>8<i class="char">tuv</i></div>
     </button>
     <button (click)="handlePinInput('9')">
-      <div>9<i class="char">wxyz</i></div>
+      <div class='btn'>9<i class="char">wxyz</i></div>
     </button><br>
     <button (click)="closePin()">
-      <ion-icon name="close"></ion-icon>
+      <ion-icon name="close" class='btn'></ion-icon>
     </button>
     <button (click)="handlePinInput('0')">
-      <div>0</div>
+      <div class='btn'>0</div>
     </button>
     <button (click)="backspacePin()">
-      <ion-icon name="backspace"></ion-icon>
+      <ion-icon name="backspace" class='btn'></ion-icon>
     </button>
   </div>
 </ion-content>

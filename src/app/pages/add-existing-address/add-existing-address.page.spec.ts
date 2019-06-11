@@ -9,10 +9,10 @@ describe('AddExistingAddressPage', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddExistingAddressPage ],
+      declarations: [AddExistingAddressPage],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -1,1 +1,26 @@
-
+ion-label {
+  font-weight: bold;
+}
+ion-button {
+  margin-right: -185px;
+}
+.send {
+  font-size: 15px;
+}
+.exit {
+  position: absolute;
+  right: 20px;
+  font-size: 20px;
+}
+.text {
+  font-size: 15px;
+  margin-left: 14px;
+}
+.from-address,
+.to-address,
+.tag,
+.amount {
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 14px;
+}

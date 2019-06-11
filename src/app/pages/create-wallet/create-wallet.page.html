@@ -1,10 +1,10 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title text-center>{{title}}</ion-title>
+  <ion-toolbar color='primary'>
+    <ion-title class='title' text-center>{{title}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content color='secondary'>
   <div class="pinpad" *ngIf="!pinVerified">
     <div text-center large margin-vertical class="doticons">
       <ion-icon [name]="enteredPinCode.length>0 ? 'radio-button-on' : 'radio-button-off'"></ion-icon>
@@ -52,24 +52,19 @@
       <ion-icon name="backspace"></ion-icon>
     </button>
   </div>
-
   <div *ngIf="pinVerified">
-    <ion-list text-center>
+    <ion-list>
+      <p class='set-phrase'>Set a Passphrase</p>
       <ion-item>
-        <ion-label position="stacked">Set a Passphrase</ion-label>
         <ion-input type="password"></ion-input>
       </ion-item>
-
+      <p class='repeat-phrase'> Repeat Passphrase</p>
       <ion-item>
-        <ion-label position="stacked">Repeat Passphrase</ion-label>
         <ion-input type="password"></ion-input>
       </ion-item>
-
-      <br>
-      <p style="color:black; text-align: justify;" text-center>Your passphrase will be used to encrypt your wallet. You will only enter it when you wish to send CSC. It should be long and strong. Never share it with anyone.</p>
-      <br>
-
-      <ion-button shape="round" (click)="validatePassPhrase()">Set Passphrase</ion-button>
+      <p class='text'>Your passphrase will be used to encrypt your wallet.You will only enter it when you wish to send
+        CSC.It should be long and strong.Never share it with anyone.</p>
+      <ion-button class='my-btn' (click)="validatePassPhrase()">Set Passphrase</ion-button>
     </ion-list>
   </div>
 </ion-content>

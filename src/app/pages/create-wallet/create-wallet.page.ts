@@ -33,6 +33,7 @@ export class CreateWalletPage implements OnInit {
     if (this.pinSubmitted) {
       if (this.enteredPinCode.length === 6) {
         this.pinVerified = true;
+        this.title = "Set Passphrase";
       }
     } else {
       if (this.enteredPinCode.length === 6) {
@@ -53,7 +54,7 @@ export class CreateWalletPage implements OnInit {
 
   validatePassPhrase() {
     this.localStorageService.set(AppConstants.KEY_SETUP_COMPLETED, true);
-    this.navCtrl.navigateRoot('/tabs');
+    this.navCtrl.navigateRoot('/recovery');
   }
 
 }

@@ -1,14 +1,12 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title text-center>License Agreement</ion-title>
+  <ion-toolbar color='primary'>
+    <ion-title class='title' text-center>License Agreement</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content text-center>
-  <h1>CasinoCoin Mobile</h1>
-
-  <p>This software is licensed under the GPL 2.0 <br><b>without any warranty. Use at own risk.</b></p>
-
+<ion-content color='secondary'>
+  <h1 class='header'>CasinoCoin Mobile</h1>
+  <p class='content'>This software is licensed under the GPL 2.0.<b><br>without any warranty. Use at own risk.</b></p>
   <blockquote style="font-size:0.8em; text-align:justify;">
     Basic Wallet Terms and Conditions
 
@@ -38,13 +36,11 @@
 
     Last Update: November 24, 2017
   </blockquote>
-
-  <p>If you understand and agree to the above then choose an option below:</p>
-
-  <ion-button routerLink="/create-wallet" routerDirection="forward">Create a New Wallet</ion-button>
-  <ion-button routerLink="/restore-existing-wallet" routerDirection="forward">Restore an Existing Wallet </ion-button>
-
-  <p>If you do not agree then close and uninstall this application.</p>
-  <p>Version: 4.1.5</p>
-  
+  <p class='terms-conditions'>If you understand and agree to the above then choose an option below:</p>
+  <ion-button class='my-btn' color='warning' routerLink="/create-wallet" routerDirection="forward">Create a New Wallet
+  </ion-button><br>
+  <ion-button class='my-btn1' color='warning' routerLink="/restore-existing-wallet" routerDirection="forward">Restore an
+    Existing Wallet </ion-button>
+  <p class='not-agree'> If you do not agree then close and uninstall this application.</p>
+  <p class='version'>Version: 4.1.5</p>
 </ion-content>

@@ -1,3 +1,25 @@
+.title-md {
+  font-size: 15px;
+  position: absolute;
+  bottom: 20px;
+  left: 85px;
+  font-weight: normal;
+}
+.title-ios {
+  font-size: 15px;
+  position: absolute;
+  bottom: 20px;
+  font-weight: normal;
+  left: 85px;
+}
 ion-button {
-    width: 80%;
+  text-transform: none;
+  font-size: 14px;
+  font-weight: normal;
+  width: 230px;
+  height: 33px;
+  border-radius: 5px;
+}
+ion-toolbar {
+  height: 60px;
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
-
+import { ActivatedRoute, RouterModule } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -10,7 +10,9 @@ export class LoginPage implements OnInit {
 
   enteredPinCode: string = "";
 
-  constructor(private navCtrl: NavController) { }
+  constructor(private navCtrl: NavController, private route:ActivatedRoute, public router:RouterModule) { 
+
+  }
 
   ngOnInit() {
   }
@@ -33,5 +35,7 @@ export class LoginPage implements OnInit {
   closePin() {
     this.enteredPinCode = "";
   }
-
+  goToRecovery(){
+    this.navCtrl.navigateRoot('/login');
+  }
 }

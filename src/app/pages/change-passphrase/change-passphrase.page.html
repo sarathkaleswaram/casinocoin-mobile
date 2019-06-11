@@ -1,10 +1,29 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color='primary'>
     <ion-back-button></ion-back-button>
-    <ion-title>change-passphrase</ion-title>
+    <ion-title class='title' text-center>Change PassPharse</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <p class='change-passphrase'>Current Passphrase or Recovery Phrase</p>
+  <ion-item>
+    <ion-input type='text'></ion-input>
+  </ion-item>
+  <div text-center class="condition">&nbsp;&nbsp;If you are using your recovery phrase please </div>
+  <div class="condition">ensure it is
+    all lower case with a single space</div>
+  <div class="condition">between each word and no spaces
+    at either end.</div><br>
+  <p class='new-passphrase'>New Passphrase</p>
+  <ion-item>
+    <ion-input type='text'>
+    </ion-input>
+  </ion-item><br>
+  <p class='new-passphrase'>New Passphrase Again</p>
+  <ion-item>
+    <ion-input type='text'>
+    </ion-input>
+  </ion-item><br>
+  <ion-button class='set-passphrase' color='danger'>Set PassPhrase</ion-button>
 </ion-content>

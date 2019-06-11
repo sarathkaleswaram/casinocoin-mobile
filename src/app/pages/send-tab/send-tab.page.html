@@ -1,6 +1,7 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title text-center>
+  <ion-toolbar color="primary">
+    <ion-icon name="exit" class='exit'></ion-icon>
+    <ion-title class='send' text-center>
       Send
     </ion-title>
   </ion-toolbar>
@@ -8,31 +9,34 @@
 
 <ion-content>
   <ion-list>
-    <ion-list-header>From Account</ion-list-header>
+    <p class='from-address'>From Address</p>
     <ion-item>
+      <ion-input></ion-input>
       <ion-select>
         <ion-select-option *ngFor="let user of users">{{user.first + ' ' + user.last}}</ion-select-option>
       </ion-select>
     </ion-item>
-
+    <p class='to-address'>To Address</p>
     <ion-item>
-      <ion-label position="stacked">To Address</ion-label>
       <ion-input></ion-input>
-      <ion-icon name="qr-scanner"></ion-icon>
+      <ion-button text-right>
+        <ion-icon name="qr-scanner"></ion-icon> Scan
+      </ion-button>
     </ion-item>
-    
+    <p class='tag'>Destination Tag (optional, but many exchanges require this)</p>
     <ion-item>
-      <ion-label position="stacked">Destination Tag (optional, but many exchanges require this)</ion-label>
       <ion-input></ion-input>
+      <ion-icon name="destination-tag"></ion-icon>
     </ion-item>
-
+    <p class='amount'>Amount</p>
     <ion-item>
-      <ion-label position="stacked">Amount</ion-label>
       <ion-input></ion-input>
-      <ion-icon name="send"></ion-icon>
+      <ion-button>Pay</ion-button>
+
     </ion-item>
   </ion-list>
 
-  <p text-center>The CasinoCoin network requires a minimum 10 CSC balance at all times and charges fees based on congestion even for failed transactions.</p>
+  <p class='text'>The CasinoCoin network requires a minimum 10 CSC balance at all times and charges fees based on
+    congestion even for failed transactions.</p>
 
 </ion-content>

@@ -1,19 +1,19 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title text-center>
+  <ion-toolbar color='primary'>
+    <ion-icon name="exit" class='exit-icon'></ion-icon>
+    <ion-title text-center class='account'>
       Accounts
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <ion-card *ngFor="let account of accountList">
-      <ion-label color="brand" style="float: left">Test Account</ion-label>
-      <ion-label color="brand" style="float: right">50.881 CSC</ion-label>      
-    </ion-card>
-
-    <ion-card class="add-account" routerLink="/add-account" routerDirection="forward">
-      <ion-icon color="brand" name="add"></ion-icon>
-      <ion-label color="brand">Add Account</ion-label>      
-    </ion-card>
+  <ion-card *ngFor="let account of accountList">
+    <ion-label style="float: left">Test Account</ion-label>
+    <ion-label style="float: right">50.881 CSC</ion-label>
+  </ion-card>
+  <ion-card class="add-account" routerLink="/add-account" routerDirection="forward">
+    <ion-icon name="add" class='add'></ion-icon>
+    <ion-label class='account-add' text-center>Add Account</ion-label>
+  </ion-card>
 </ion-content>

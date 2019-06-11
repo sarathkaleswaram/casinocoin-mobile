@@ -1,10 +1,25 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color='primary'>
     <ion-back-button></ion-back-button>
-    <ion-title>generate-new-address</ion-title>
+    <ion-title text-center>New Account</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <p class='new-address'>WARNING THIS ADDRESS HAS NOT YET BEEN ADDED TO YOUR WALLET</p>
+  <p class='generate-address'>
+    Generated account address:
+  </p>
+  <p></p>
+  <p class='nick-name'>Account Nickname (optional)</p>
+  <ion-item>
+    <ion-input type='text'>
+    </ion-input>
+  </ion-item>
+  <p class='pass-phrase'>Enter your Passphrase</p>
+  <ion-item>
+    <ion-input type='text'></ion-input>
+  </ion-item>
+  <p class='address-activation'>Once imported your address will need to be activated by sending 10 CSC to it. </p>
+  <ion-button color='danger' class='mybtn'>Import this Address</ion-button>
 </ion-content>
