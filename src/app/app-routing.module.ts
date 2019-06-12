@@ -14,8 +14,7 @@ const routes: Routes = [
   { path: 'change-pin', loadChildren: './pages/change-pin/change-pin.module#ChangePinPageModule' },
   { path: 'change-passphrase', loadChildren: './pages/change-passphrase/change-passphrase.module#ChangePassphrasePageModule' },
   { path: 'backup-wallet', loadChildren: './pages/backup-wallet/backup-wallet.module#BackupWalletPageModule' },
-  { path: 'restore-existing-wallet', loadChildren: './pages/restore-existing-wallet/restore-existing-wallet.module#RestoreExistingWalletPageModule' },
-  { path: 'recovery', loadChildren: './pages/recovery/recovery.module#RecoveryPageModule' }
+  { path: 'restore-existing-wallet', loadChildren: './pages/restore-existing-wallet/restore-existing-wallet.module#RestoreExistingWalletPageModule' }
 
 ];
 @NgModule({

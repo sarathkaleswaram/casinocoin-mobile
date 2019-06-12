@@ -1,5 +1,5 @@
 ion-button {
-  width: 80%;
+  width: 60%;
 }
 .header {
   font-size: 30px;
@@ -15,31 +15,19 @@ ion-button {
 }
 .my-btn {
   height: 33px;
-  width: 250px;
+  width: 60%;
   font-weight: normal;
   text-transform: none;
   font-size: 14px;
-  margin-left: 18px;
+  border-radius: 4px;
 }
 
-.my-btn1 {
-  height: 33px;
-  width: 250px;
-  text-transform: none;
-  font-size: 14px;
-  margin-left: 18px;
-  font-weight: normal;
-}
-.header,
-.content {
-  margin-left: 18px;
-}
 .not-agree,
-.version,
 .terms-conditions {
   font-size: 15px;
-  margin-left: 18px;
+  margin-left: 15px;
 }
 .version {
   text-align: center;
+  font-size: 15px;
 }

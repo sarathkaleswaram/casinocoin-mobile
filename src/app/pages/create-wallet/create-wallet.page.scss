@@ -57,16 +57,10 @@ ion-button {
 }
 .title-md {
   font-size: 15px;
-  position: absolute;
-  left: 85px;
-  bottom: 20px;
   font-weight: normal;
 }
 .ttile-ios {
   font-size: 15px;
-  position: absolute;
-  left: 85px;
-  bottom: 20px;
   font-weight: normal;
 }
 ion-button {
@@ -82,11 +76,10 @@ ion-toolbar {
 }
 .my-btn {
   height: 33px;
-  width: 250px;
+  width: 60%;
   font-size: 14px;
   border-radius: 4px;
   color: #ffffff;
-  margin-left: 25px;
 }
 .text {
   color: #000000;
@@ -104,3 +97,4 @@ ion-toolbar {
   color: #000000;
   margin-left: 16px;
 }
+

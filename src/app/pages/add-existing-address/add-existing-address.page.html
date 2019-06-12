@@ -1,28 +1,33 @@
 <ion-header>
   <ion-toolbar color='primary'>
     <ion-back-button></ion-back-button>
+    <ion-icon name="exit" class='exit-icon'></ion-icon>
     <ion-title class='title' text-center>Add Existing Account</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <p class='secret-key'>CasinoCoin Secret</p>
-  <ion-item>
-    <ion-button class='qr-btn' color='danger'>QR</ion-button>
-    <ion-input input type='text'></ion-input>
-  </ion-item>
-  <p class='address'>CasinoCoin Address (leave blank to generate from secret)</p>
-  <ion-item>
-    <ion-button color='danger' class='qr-btn'>QR</ion-button>
-    <ion-input input type='text'></ion-input>
-  </ion-item>
-  <p class='nick-name'>Account Nickname (optional)</p>
-  <ion-item>
-    <ion-input type='text'></ion-input>
-  </ion-item>
-  <p class='pass-phrase'>Enter your Passphrase</p>
-  <ion-item>
-    <ion-input type='text'></ion-input>
-  </ion-item>
-  <ion-button color='danger' class='my-btn'>Import Account</ion-button>
+  <ion-list>
+    <p class='secret-key'>CasinoCoin Secret</p>
+    <ion-item>
+      <ion-button class='qr-btn' color='danger'>QR</ion-button>
+      <ion-input input type='text'></ion-input>
+    </ion-item>
+    <p class='address'>CasinoCoin Address (leave blank to generate from secret)</p>
+    <ion-item>
+      <ion-button color='danger' class='qr-btn'>QR</ion-button>
+      <ion-input input type='text'></ion-input>
+    </ion-item>
+    <p class='nick-name'>Account Nickname (optional)</p>
+    <ion-item>
+      <ion-input type='text'></ion-input>
+    </ion-item>
+    <p class='pass-phrase'>Enter your Passphrase</p>
+    <ion-item>
+      <ion-input type='text'></ion-input>
+    </ion-item><br>
+    <div text-center>
+      <ion-button color='danger' class='my-btn'>Import Account</ion-button>
+    </div>
+  </ion-list>
 </ion-content>

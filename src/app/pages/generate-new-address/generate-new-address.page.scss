@@ -1,22 +1,14 @@
-.title-md {
-  position: absolute;
-  top: 20px;
+.title {
   font-size: 15px;
-  left: 90px;
-}
-.title-ios {
-  position: absolute;
-  top: 20px;
-  font-size: 15px;
-  left: 90px;
+  position:relative;
+  bottom:30px;
 }
 .mybtn {
-  width: 250px;
+  width: 60%;
   height: 33px;
   font-weight: normal;
   text-transform: none;
-  position: absolute;
-  left: 22px;
+  
 }
 .pass-phrase {
   font-weight: bold;
@@ -45,3 +37,13 @@
   margin-left: 15px;
   text-align: center;
 }
+ion-toolbar{
+  height:58px;
+  }
+  .exit-icon {
+    position: absolute;
+    right: 20px;
+    font-size: 20px;
+    bottom:30px;
+  }
+  

@@ -1,25 +1,18 @@
-.title-md {
+.title {
   font-size: 15px;
-  position: absolute;
-  left: 70px;
-  bottom: 20px;
-  font-weight: normal;
+  position: relative;
+  bottom: 30px;
 }
-.ttile-ios {
-  font-size: 15px;
-  position: absolute;
-  left: 70px;
-  bottom: 20px;
-  font-weight: normal;
+ion-toolbar {
+  height: 58px;
 }
 ion-button {
   text-transform: none;
 }
-ion-toolbar {
-  height: 60px;
-}
+
 .condition {
   font-size: 15px;
+  margin-left:15px;
 }
 .new-passphrase {
   font-size: 15px;
@@ -36,8 +29,7 @@ ion-toolbar {
   font-weight: normal;
   align-items: center;
   font-size: 14px;
-  width: 250px;
+  width:60%;
   height: 33px;
-  position: absolute;
-  left: 22px;
+ 
 }
