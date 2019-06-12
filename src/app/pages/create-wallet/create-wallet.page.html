@@ -4,7 +4,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content color='secondary'>
+<ion-content color='secondary' *ngIf="!recoveryShow">
   <div class="pinpad" *ngIf="!pinVerified">
     <div text-center large margin-vertical class="doticons">
       <ion-icon [name]="enteredPinCode.length>0 ? 'radio-button-on' : 'radio-button-off'"></ion-icon>
@@ -56,15 +56,44 @@
     <ion-list>
       <p class='set-phrase'>Set a Passphrase</p>
       <ion-item>
-        <ion-input type="password"></ion-input>
+        <ion-input type="password" [(ngModel)]="walletPassphrase"></ion-input>
       </ion-item>
       <p class='repeat-phrase'> Repeat Passphrase</p>
       <ion-item>
-        <ion-input type="password"></ion-input>
+        <ion-input type="password" [(ngModel)]="walletPassphraseConfirmed"></ion-input>
       </ion-item>
       <p class='text'>Your passphrase will be used to encrypt your wallet.You will only enter it when you wish to send
         CSC.It should be long and strong.Never share it with anyone.</p>
       <div text-center><ion-button class='my-btn' (click)="validatePassPhrase()">Set Passphrase</ion-button></div>
     </ion-list>
   </div>
+</ion-content>
+
+<ion-content *ngIf="recoveryShow">
+  <h1 text-center>IMPORTANT!!!</h1>
+  <p class="text">Your six(6) word recovery phrase appears below. Write it down on paper and store it in a safe
+    location. If you ever forget your passphrase this code will be the only way for you to regain access to your
+    CSC. Never share your recovery phrase with anyone.
+  </p>
+  <p class='text'>This recovery phrase is useless without a backup. Please make a backup using the settings menu after
+    you finish adding or generating of your addresses. CasinoCoin Mobile backups are <span>data backups</span>, this
+    means you will <span>only have access to the addresses you had in your wallet at the time you made the
+      backup!</span> </p>
+  <ion-row>
+    <ion-col size='9' class='toggle-text'>
+      I sincerely promise I've written my recovery phrase down.
+    </ion-col>
+    <ion-col>
+      <ion-toggle [(ngModel)]="recoveryToggleOne"></ion-toggle>
+    </ion-col>
+  </ion-row><br>
+  <ion-row>
+    <ion-col size='9' class='toggle-text'>
+      I understand that the recovery phrase IS NOT A WALLET BACKUP.
+    </ion-col>
+    <ion-col>
+      <ion-toggle [(ngModel)]="recoveryToggleTwo"></ion-toggle>
+    </ion-col>
+  </ion-row><br>
+  <ion-button class='finish-setup' color='warning' (click)='finishSetup()'>Finish Setup</ion-button>
 </ion-content>

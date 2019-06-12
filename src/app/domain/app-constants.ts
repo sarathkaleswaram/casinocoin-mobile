@@ -35,4 +35,5 @@ export class AppConstants {
     public static TOUCH_ID_ENABLE = 'touchIdEnable';
     public static JUMIO_RESULT = 'jumioResult';
     public static LOGGED_IN = 'loggedIn';
+    public static CSC_CRYPTO_SALT = 'cscCryptoSalt';
 }

@@ -28,6 +28,9 @@
     },
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "org.casinocoin.mobile"
+    },
+    "cordova-plugin-app-version": {
+      "PACKAGE_NAME": "org.casinocoin.mobile"
     }
   },
   "dependent_plugins": {}
